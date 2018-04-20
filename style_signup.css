@@ -1,4 +1,4 @@
-﻿.signupbox {
+.signupbox {
 	margin-top: 10px;
 	border-radius: 10%;
 	width: 380px;
@@ -162,7 +162,7 @@ p {
 
 .error_place {
   margin-left: 880px;
-  margin-top: 150px;
+  margin-top: 160px;
 }
   .error {
     visibility: hidden;
@@ -190,4 +190,28 @@ p {
 
   margin-top: -44px;
 }
+
+#error5 {
+  margin-left: -645px;
+}
+
+#access_denied {
+   visibility: visible;
+   line-height: 8px; 
+  margin-left: 480px;
+  margin-top: 250px;
+  display: inline-block;
+  width: 30%;  
+  text-transform: uppercase;
+  padding: 1.2em 4em;
+  }
+
+
+
+
+
+
+
+
+
 
