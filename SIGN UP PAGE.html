@@ -1,0 +1,58 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>SIGN UP</title>
+    <script type="text/javascript" src="jquery-3.3.1.js"></script>
+    <script type="text/javascript" src="registeration\countries.js"></script>
+    <script type="text/javascript" src="registeration\validation.js"></script>
+</head>
+        <link rel="stylesheet" type="text/css" href="style_signup.css">
+<body>
+        <div class="signupbox">
+
+            <div class="intro">Creat your account</div>
+            <div class="advice">Start your journey with us</div>
+            <form>
+                <div class="inputs">
+                    <input id="fname" type="text" placeholder="*First Name" class="frame undefined" required="*" onkeyup="fn_keyup()"><input id="sname" type="text" placeholder="Second Name" class="frame undefined">              
+                </div>
+                <div class="inputs"><input id="surname" type="text" placeholder="*Sur Name" class="fram undefined" required="*" onkeyup="surn_keyup()">
+                </div>
+                <div class="inputs"><input id="email" type="email" placeholder="*Email Address" class="fram undefined" required="*" onkeyup="email_keyup()">
+                </div>
+                <div class="inputs"><input id="pw" type="password" placeholder="*Password" class="fram undefined" required="password" onkeyup="pw_keyup()">
+                </div>
+                <div class="birthday"><input id="bd" type="date" placeholder="*Birthday" class="fram selections" required="Birthday" onchange="bd_onchange()">
+                </div>
+                <select id="country" name="country" class="framee selections" required="*" onchange="c_onchange()">
+                    <option value="0">*Country</option>
+                </select>
+                <p>All '*' fields are required </p>
+                <button type="button" class="color button bSize" style="cursor: pointer;" onclick="reg_click()">Sign Up</button>
+            </form>
+
+
+
+        </div>
+        <div class="error_place">
+            <div class="error" id="error1"> <strong>Warning!</strong> Please enter a valid name.</div>
+            <div class="error" id="error2"> <strong>Warning!</strong> Please enter a valid name.</div>
+            <div class="error" id="error3"> <strong>Warning!</strong> Please enter a valid email.</div>
+            <div class="error" id="error4"> <strong>Warning!</strong> Please enter a valid password.</div>
+            <div class="error" id="error5"> <strong>Warning!</strong> Please enter a valid birthdate.</div>
+            <div class="error" id="error6"> <strong>Warning!</strong> Please choose your country.</div>
+        </div>
+        
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
