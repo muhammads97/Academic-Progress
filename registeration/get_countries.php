@@ -1,4 +1,6 @@
-<?php
+﻿<?php
+session_start();
+session_unset();
 function array_of_countries(){
 	$servername = "localhost";
 	$username = "root";

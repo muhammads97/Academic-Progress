@@ -78,6 +78,10 @@ function email_keyup(){
 	if(!email_v(t)){
 		document.getElementById("error3").style.visibility = "visible";
 		document.getElementById("email").style.borderColor = "red";
+	} else if(!email_unique(t)){
+		document.getElementById("error3").style.visibility = "visible";
+		document.getElementById("email").style.borderColor = "red";
+		document.getElementById("error3").innerHTML =  "<strong>Warning!</strong> This email already exist.";
 	} else {
 		document.getElementById("error3").style.visibility = "hidden";
 		document.getElementById("email").style.borderColor = "#dbe2e8";
@@ -160,6 +164,9 @@ function register(arr){
    		data: arr,
    		success: function(data){
       		u = data.r;
+      		if(u){
+      			window.location.href="after_sign_up.html";
+      		}
    		},
    		error: function(xhr, status, error) {
   			console.log(xhr);
@@ -167,5 +174,4 @@ function register(arr){
   			console.log(error);
 		}
 	});
-	console.log(u);
 }
