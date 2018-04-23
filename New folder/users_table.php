@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en"> <head>
 <meta charset="utf-8">
 <title>Hello, World!</title> </head>
@@ -25,7 +25,7 @@ $sql = "CREATE TABLE users (
 			password VARCHAR(30) NOT NULL,
 			birth_date DATE NOT NULL,
 			country_id int(12) NOT NULL,
-			study_field int(20),
+			study_field VARCHAR(250),
 			p_picture boolean,
 			address VARCHAR(250)
 			)";

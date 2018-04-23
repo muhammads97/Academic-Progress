@@ -112,13 +112,12 @@ function bd_onchange(){
 
 function c_onchange(){
 	var c = document.getElementById("country").value;
-	console.log(c);
 	if(!country_v(c)){
 		document.getElementById("error6").style.visibility = "visible";
-		document.getElementById("country").style.borderColor = "red";
+		//document.getElementById("country").style.borderColor = "red";
 	} else {
 		document.getElementById("error6").style.visibility = "hidden";
-		document.getElementById("counrty").style.borderColor = "#dbe2e8";
+		//document.getElementById("counrty").style.borderColor = "#dbe2e8";
 	}
 }
 
@@ -156,7 +155,7 @@ function reg_click(){
 
 function register(arr){
 	var u = "";
-	console.log(arr);
+	//console.log(arr);
 	$.ajax({
   		type: 'POST',
    		url: 'registeration\\reg.php', 
@@ -165,7 +164,7 @@ function register(arr){
    		success: function(data){
       		u = data.r;
       		if(u){
-      			window.location.href="after_sign_up.html";
+      			window.location.href="Confermation_Sign_Up.html";
       		}
    		},
    		error: function(xhr, status, error) {

@@ -1,7 +1,26 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
 	<title>Confermation</title>
+	<script type="text/javascript" src="jquery-3.3.1.js"></script>
+	<script type="text/javascript" src="registeration\img.js"></script>
+	<script type="text/javascript">
+		$.ajax({
+  		type: 'POST',
+   		url: 'registeration\\get_session.php', 
+   		async: false,
+   		success: function(data){
+   			data = JSON.parse(data);
+   			//console.log(data.after_reg);
+   			if(data.after_reg !== true){
+   				window.location.href="ACCESS_DENIED.html";
+   			}
+   		},
+   		error: function() {
+      		alert("error");
+   		}
+	});
+	</script>
 </head>
 		<link rel="stylesheet" type="text/css" href="style_confermation.css">
 		
@@ -9,12 +28,12 @@
 		<div class="loginbox">
 
 			<div class="intro">Finishing Registration</div>
-			<img src="avatar.png" class="avatar">
-			<form>
+			<img id="prev_img" src="images\avatar.png" class="avatar">
+			<form id="form">
 					<div > 
 						<br>
                 		<label class="labels"><strong>Profile Picture:</strong></label>
-                		<input id="image" placeholder="Add profile picture" type="file" name="profilepic" >
+                		<input id="image" placeholder="Add profile picture" type="file" name="profilepic" onchange="on_change_img()">
 						<label for="image" id="icon" class="add">ADD PICTURE</label>
 						<br><br>
                 		
@@ -22,10 +41,10 @@
              		<div>
              			<br>
              			<label class="labels"><strong>Study Field:</strong></label>
-             			<div class="inputs"><input type="text" placeholder="*Study Field" class="fram undefined" required="">
+             			<div class="inputs"><input id="sf" type="text" placeholder="*Study Field" class="fram undefined" required="">
     					</div>
              		</div>
-             		<button type="button" class="color button bSize" style="cursor: pointer;">Finish</button>
+             		<button id = "sub" type="button" class="color button bSize" style="cursor: pointer;" onclick="on_click_form()">Finish</button>
 
 			</form>
 			

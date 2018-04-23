@@ -20,6 +20,12 @@ function reg($arr){
 	if ($conn->query($sql) === true){
 		$valid = true;
 		$_SESSION["after_reg"] = true;
+		$sql = "SELECT * FROM users WHERE email = '{$arr["e"]}'";
+		$res = $conn->query($sql);
+		$res = $res->fetch_row();
+		$_SESSION["email"] = $res[4];
+		$_SESSION["name"] = $res[1];
+		$_SESSION["id"] = $res[0];
 	} else {
 		$valid = false;
 	}
