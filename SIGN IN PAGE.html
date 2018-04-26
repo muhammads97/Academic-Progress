@@ -1,26 +1,44 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
 	<title>SIGN IN</title>
 </head>
 
 	<link rel="stylesheet" type="text/css" href="style.css">
-
+	<script type="text/javascript" src="jquery-3.3.1.js"></script>
+	<script type="text/javascript" src="login\login.js"></script>
+	<script type="text/javascript">
+		$.ajax({
+  		type: 'POST',
+   		url: 'registeration\\get_session.php', 
+   		async: false,
+   		success: function(data){
+   			data = JSON.parse(data);
+   			//console.log(data.after_reg);
+   			if(typeof data.id !== 'undefined'){
+   				window.location.href="PROFILE.html";
+   			}
+   		},
+   		error: function() {
+      		alert("error");
+   		}
+	});
+	</script>
 <body>
 	
 	<div class="loginbox">
 		
 		<div class="intro">Sign in to your account</div>
 		<div class="advice">The best way to predict your future is to create it</div>
-		<img src="avatar.png" class="avatar">
+		<img src="images\avatar.png" class="avatar">
 
 		<form>
-    		<div class="inputs"><input type="email" placeholder="Email Address" class="fram undefined">
+    		<div class="inputs"><input id="e" type="email" placeholder="Email Address" class="fram undefined">
     			</div>
-    		<div class="inputs"><input type="password" placeholder="Password" class="fram undefined">
+    		<div class="inputs"><input id="p" type="password" placeholder="Password" class="fram undefined">
     			</div>
-  			<button type="button" class="color button bSize" style="cursor: pointer;">Sign In</button>
-  			<a class="gotosignup" href="file:///D:/Karim/HANDASA/1st%20Year/Comp%20&%20Society/Project/WORK/SIGN%20UP%20PAGE.html">
+  			<button type="button" class="color button bSize" style="cursor: pointer;" onclick="click_login()">Sign In</button>
+  			<a class="gotosignup" href="SIGN%20UP%20PAGE.html">
   			Not a user yet ?</a>
  		 </form>
 

@@ -5,6 +5,23 @@
     <script type="text/javascript" src="jquery-3.3.1.js"></script>
     <script type="text/javascript" src="registeration\countries.js"></script>
     <script type="text/javascript" src="registeration\validatation.js"></script>
+    <script type="text/javascript">
+        $.ajax({
+        type: 'POST',
+        url: 'registeration\\get_session.php', 
+        async: false,
+        success: function(data){
+            data = JSON.parse(data);
+            //console.log(data.after_reg);
+            if(typeof data.id !== 'undefined'){
+                window.location.href="PROFILE.html";
+            }
+        },
+        error: function() {
+            alert("error");
+        }
+    });
+    </script>
 </head>
         <link rel="stylesheet" type="text/css" href="style_signup.css">
 <body>
