@@ -19,6 +19,7 @@ body {
 	border-radius: 10%;
 	width: 400px;
 	height: 500px;
+  max-height: 500px;
 	background: #fff;
 	color: #fff;
 	top: 50%;
@@ -27,6 +28,10 @@ body {
 	transform: translate(-50% , -50%);
 	box-sizing: border-box;
 	padding: 60px 30px;
+}
+.tobe {
+  overflow-y: auto;
+  max-height: 300px;
 }
 .intro {
 	position: left;
@@ -142,6 +147,7 @@ body {
   position: absolute;
   right: 0;
   top: 0;
+  margin-right: 5px;
   background: #ff0000;
   padding: 8px 12px 8px 12px;
 }
@@ -206,6 +212,127 @@ background: #e60000;
 	padding: 60px 30px;
 }
 
+#projectinput {
+  margin-left: 150px;
+  margin-top: -66px;
+}
+
+/*to hide choose file label*/
+[type=file] {
+  width: 100%;
+  visibility: hidden;
+  margin-left: 10px;
+    filter: alpha(opacity=0);
+    opacity: 3;
+}
+/*label add picture to be like a button*/
+#icon {
+  width: 32px;
+  height: 15px;
+   border: none;
+  border-radius: 10px;
+  box-shadow: 12px 15px 20px rgba(0, 0, 0, 0.1);
+  /*color el text in the button*/
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  -webkit-font-smoothing: antialiased;
+  letter-spacing: 0.165em;
+  max-width: 100%;
+  overflow: hidden;
+  text-transform: uppercase;
+  transition: 0.2s box-shadow ease-in-out, 0.2s background-color ease-in-out, 0.2s border-color ease-in-out;
+  white-space: nowrap;
+  padding: 1.2em 4em;
+  background: #ff0000;
+}
+#icon:focus:not(:disabled), #icon:hover:not(:disabled) {
+    background: #e60000; }
+    #icon:focus, #icon:hover {
+    box-shadow: 2px 4px 8px 0 rgba(0, 0, 0, 0.1); }
+#icon {
+    margin-left: 380px;
+    margin-top: -70px;
+    margin-bottom: 42px;
+   }
+
+#h5ah {
+  margin-bottom: 2px;
+}
+
+.list_pro li{
+  position: relative;
+  list-style-type: none;
+  cursor: pointer;
+  margin-left: -40px;
+    padding: 10px 8px 8px 40px;
+  color: #2e3d49;
+    font-size: 18px;
+    transition: 0.2s;
+
+    /* make the list items unselectable */
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.list_pro li:hover {
+  background: #ffe6e6;
+}
+/* When clicked on, add a background color and strike out text */
+.list_pro li.checked {
+  background: #ffb3b3;
+  color: black;
+  text-decoration: line-through;
+}
+/* Add a "checked" mark when clicked on */
+.list_pro li.checked::before {
+  content: '';
+  position: absolute;
+  border-color: #ff0000;
+  border-style: solid;
+  border-width: 0 2px 2px 0;
+  top: 10px;
+  left: 16px;
+  transform: rotate(45deg);
+  height: 15px;
+  width: 7px;
+}
+
+.pro {
+  overflow-y: auto;
+  max-height: 150px;
+  margin-top: -50px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .buttons {
 	margin-left: -810px;
 	margin-top: 10px;
@@ -242,7 +369,28 @@ background: #e60000;
 	margin-top: 332px;
 }
 
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+}
 
+/* Track */
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey; 
+    border-radius: 10px;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #ff0000;; 
+    border-radius: 10px;
+    
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #e60000; 
+}
 
 
 
