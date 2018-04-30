@@ -1,20 +1,40 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
 	<title>Home Page</title>
 </head>
 	<link rel="stylesheet" type="text/css" href="home_style.css">
-	<script type="text/javascript" src="home.js"></script>
+	<script type="text/javascript" src="jquery-3.3.1.js"></script>
+	<script type="text/javascript" src="profile/todo/todo.js"></script>
+	<script type="text/javascript" src="profile/onReady.js"></script>
+	
+	<script type="text/javascript">
+		$.ajax({
+  		type: 'POST',
+   		url: 'registeration\\get_session.php', 
+   		async: false,
+   		success: function(data){
+   			data = JSON.parse(data);
+   			//console.log(data.after_reg);
+   			if(typeof data.id == 'undefined'){
+   				window.location.href="SIGN IN PAGE.html";
+   			}
+   		},
+   		error: function() {
+      		alert("error");
+   		}
+	});
+	</script>
 <body>
 		<div class="logo">
-			<img src="avatar.png" class="avatar">
+			<img src="images/avatar.png" class="avatar">
 		</div>
 		<div class="buttons">
 			<ul>
 				<li><a href="#"><img id="profile" src="profile.png" class="avatar2"></a></li>
 				<li><a href="#"><img id="cv" src="cv.png" class="avatar2"></a></li>
 				<li><a href="#"><img id="setting" src="settings.png" class="avatar2"></a></li>
-				<li><a href="#"><img id="logout" src="logout.png" class="avatar2"></a></li>
+				<li><a style="cursor:pointer;" onclick="logout_click()"><img id="logout" src="logout.png" class="avatar2"></a></li>
 			</ul>
 		</div>	
 		<div class="todo">

@@ -25,7 +25,7 @@ function click_login(){
 		if (r[1] == false){
 			alert("Wrong password");
 		} else {
-			window.location.href="PROFILE.html";
+			window.location.href="home.html";
 		}
 	}
 }

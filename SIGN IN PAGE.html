@@ -14,9 +14,9 @@
    		async: false,
    		success: function(data){
    			data = JSON.parse(data);
-   			//console.log(data.after_reg);
+   			console.log(data.id);
    			if(typeof data.id !== 'undefined'){
-   				window.location.href="PROFILE.html";
+   				window.location.href="home.html";
    			}
    		},
    		error: function() {

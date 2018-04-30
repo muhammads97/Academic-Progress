@@ -17,7 +17,7 @@ function post(form){
 		processData: false,
    		success: function(data){
       		if(data[0] && data[1]){
-      			window.location.href="PROFILE.html";
+      			window.location.href="home.html";
       		} else {
       			alert("error occured please try again.")
       		}
