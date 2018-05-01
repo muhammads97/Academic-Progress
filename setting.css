@@ -242,6 +242,11 @@ select:active, select:focus {
 
 .birthday {
 	width: 50%;
+  overflow-y: hidden;
+}
+.unstyled::-webkit-inner-spin-button,
+.unstyled::-webkit-calendar-picker-indicator {
+    -webkit-appearance: none;
 }
 /*for the country field*/
 .framee {
@@ -281,11 +286,11 @@ select:active, select:focus {
 
 
 .error_place {
-  margin-left: 880px;
-  margin-top: 160px;
+  margin-top: 310px;
 }
   .error {
     visibility: hidden;
+    position: absolute;
     background-color: #ff0000; 
     border: none;
   border-radius: 10px;
@@ -298,7 +303,6 @@ select:active, select:focus {
   -webkit-font-smoothing: antialiased;
   letter-spacing: 0.165em;
   text-align: center;  
-  margin-top: 20px;
   width: 50%;
   height: 44px;
   box-sizing: border-box;  
@@ -306,13 +310,16 @@ select:active, select:focus {
   box-shadow: 0 2px 2px 0 rgba(46, 60, 73, 0.05);
   }
 
- #error6{
-
-  margin-top: -44px;
+ #error1{
+  width: 220px;
+  margin-left: 72px;
+  margin-bottom: -50px;
 }
 
-#error5 {
-  margin-left: -645px;
+#error2 {
+  width: 220px;
+  margin-left: 72px;
+  margin-top: 65px;
 }
 
 
