@@ -123,6 +123,10 @@ p {
 .birthday {
 	width: 50%;
 }
+.unstyled::-webkit-inner-spin-button,
+.unstyled::-webkit-calendar-picker-indicator {
+    -webkit-appearance: none;
+}
 /*for the country field*/
 .framee {
 	position: absolute;
