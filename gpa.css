@@ -211,7 +211,25 @@ label {
 	margin-left: 20px;
 }
 
+/* Style the close button */
+.close {
+  position: absolute;
+  color: #fff;
+  margin-top: 194px;
+  border-radius: 50%;
+  cursor: pointer;
+  position: absolute;
+  right: 0;
+  top: 0;
+  margin-right: 265px;
+  background: #ff0000;
+  padding: 8px 12px 8px 12px;
+}
 
+.close:hover {
+background: #e60000;
+  color: black;
+}
 
 
 

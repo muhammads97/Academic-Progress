@@ -36,6 +36,7 @@
 					 						+"<option value='5'>5</option>"
 							 				+"<option value='5.5'>5.5</option>"
 							 			+"</select>"
-							 		+"</div>";
+							 		+"</div>"
+							 		+"<span class='close'>×</span>";
 	ul.appendChild(li);
 }
