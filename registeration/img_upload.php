@@ -7,6 +7,7 @@ if (!isset($_SESSION['id'])){
 	$arr = array();
 	array_push($arr, set_img());
 	array_push($arr, set_sf());
+	updateSession();
 	$_SESSION['after_reg'] = false;
 	echo json_encode($arr);
 }
@@ -15,7 +16,7 @@ if (!isset($_SESSION['id'])){
 function set_img(){
 	if($_POST['img_set']){
 		if(isset($_FILES['file'])){
-			$target = $_SERVER['DOCUMENT_ROOT'] . "/first_project/images/";
+			$target = "http://localhost" . "/first_project/images/";
 			$id = $_SESSION['id'];
 			$imageFileType = strtolower(pathinfo($_FILES['file']['name'],PATHINFO_EXTENSION));
 			$target_dir = $target . $id . "." . $imageFileType;
@@ -66,5 +67,30 @@ function set_sf(){
 		return false;
 	}
 	return fales;
+}
+function updateSession(){
+	$servername = "localhost";
+	$username = "root";
+	$password = "";
+	$dbname = "ac_track";
+	$conn = new mysqli($servername, $username, $password, $dbname);
+	if ($conn->connect_error) {
+		echo "<script>console.log('3');</script>";
+   		die("Connection failed: " . $conn->connect_error);
+	} 
+	$sql = "SELECT * FROM users WHERE id = '{$_SESSION['id']}'";
+	$res = $conn->query($sql);
+	$row = $res->fetch_row();
+	$_SESSION['email'] = $row[4];
+	$_SESSION['fn'] = $row[1];
+	$_SESSION['second'] = $row[2];
+	$_SESSION['sn'] = $row[3];
+	$_SESSION['id'] = $row[0];
+	$_SESSION['pw'] = $row[5];
+	$_SESSION['sf'] = $row[8];
+	$_SESSION['pp'] = $row[9];
+	$_SESSION['country'] = $row[7];
+	$_SESSION['bb'] = $row[6];
+	$conn->close();
 }
 ?>

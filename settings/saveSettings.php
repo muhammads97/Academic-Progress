@@ -16,13 +16,16 @@ function reg($arr){
     	die("Connection failed: " . $conn->connect_error);
 	} 
 
-	$sql = "INSERT INTO users VALUES(null, '{$arr["fn"]}', '{$arr["sn"]}', '{$arr["surn"]}', '{$arr["e"]}', '{$arr["p"]}', '{$arr["bd"]}', '{$arr["c"]}', null, null, null)";
+	$sql = "UPDATE users SET first_name = '{$arr["fn"]}',
+							 second_name = '{$arr["sn"]}',
+							 last_name = '{$arr["surn"]}',
+							 birth_date = '{$arr["bd"]}',
+							 country_id = '{$arr["c"]}' WHERE id = '{$_SESSION['id']}'";
 	if ($conn->query($sql) === true){
 		$valid = true;
-		$_SESSION["after_reg"] = true;
-		$sql = "SELECT * FROM users WHERE email = '{$arr["e"]}'";
+		$sql = "SELECT * FROM users WHERE id = '{$_SESSION['id']}'";
 		$res = $conn->query($sql);
-		$res = $res->fetch_row();
+		$row = $res->fetch_row();
 		$_SESSION['email'] = $row[4];
 		$_SESSION['fn'] = $row[1];
 		$_SESSION['second'] = $row[2];

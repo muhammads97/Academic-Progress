@@ -1,19 +1,39 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
 	<title>Settings</title>
 </head>
 	<link rel="stylesheet" type="text/css" href="setting.css">
+  <script type="text/javascript" src="jquery-3.3.1.js"></script>
+  <script type="text/javascript" src="settings/onReady.js?n=1"></script>
+
+  <script type="text/javascript">
+    $.ajax({
+      type: 'POST',
+      url: 'registeration\\get_session.php', 
+      async: false,
+      success: function(data){
+        data = JSON.parse(data);
+        //console.log(data.after_reg);
+        if(typeof data.id == 'undefined'){
+          window.location.href="SIGN IN PAGE.html";
+        }
+      },
+      error: function() {
+          alert("error");
+      }
+  });
+  </script>
 <body>
     <div >
-            <img class="logo" src="logo.png">
+            <img class="logo" src="images/logo.png">
         </div>
         <div class="buttons">
             <ul>
-                <li><a href="#"><img id="profile" src="profile.png" class="avatar2"></a></li>
-                <li><a href="#"><img id="cv" src="cv.png" class="avatar2"></a></li>
-                <li><a href="#"><img id="setting" src="settings.png" class="avatar2"></a></li>
-                <li><a style="cursor:pointer;" onclick="logout_click()"><img id="logout" src="logout.png" class="avatar2"></a></li>
+                <li><a style="cursor:pointer;" onclick="profile_click()"><img id="profile" src="images/profile.png" class="avatar2"></a></li>
+                <li><a href="#"><img id="cv" src="images/cv.png" class="avatar2"></a></li>
+                <li><a style="cursor:pointer;" onclick="settings_click()"><img id="setting" src="images/settings.png" class="avatar2"></a></li>
+                <li><a style="cursor:pointer;" onclick="logout_click()"><img id="logout" src="images/logout.png" class="avatar2"></a></li>
             </ul>
         </div>
  <div class="signupbox">
@@ -28,7 +48,7 @@
                 <div class="inputs"><input id="email" type="email" placeholder="*Email Address" class="fram undefined" required="*" 
                    readonly onkeyup="email_keyup()">
                 </div>
-                <div class="inputs"><input id="pw" type="password" placeholder="*Password" class="fram undefined" required="password" 
+                <div class="inputs"><input id="pw" type="text" placeholder="*Password" class="fram undefined" required="password" 
                   readonly onkeyup="pw_keyup()">
                 </div>
 
@@ -40,18 +60,18 @@
         <div class="loginbox">
 
 			<div class="intro" id="set">Settings</div>
-			<img src="avatar.png" class="avatar">
+			<img src="images/avatar.png" class="avatar" id = "settings_profile">
 			<form>
 					<div > 
                 		<label class="labels"><strong>Profile Picture:</strong></label>
-                		<input id="image" placeholder="Add profile picture" type="file" name="profilepic" >
+                		<input id="image" placeholder="Add profile picture" type="file" name="profilepic" onchange="on_change_img()" >
 						<label for="image" id="icon" class="add">ADD PICTURE</label>
 						<br><br>
                 		
              		</div>
              		<div>
              			<br>
-             			<div class="inputs"><input type="text" id="placefield" placeholder="*Study Field" class="fram " required="">
+             			<div class="inputs"><input type="text" id="sf" placeholder="*Study Field" class="fram " required="">
              			<div class="birthday"><input id="bd" type="date" placeholder="*Birthday" class="fram selections unstyled" required="Birthday" onchange="bd_onchange()">
                			 </div>
                 		<select id="country" name="country" class="framee selections" required="*" onchange="c_onchange()">
@@ -59,7 +79,7 @@
                 				</select>
     					</div>
              		</div>
-             		<button type="button" id="save" class="color button bSize" style="cursor: pointer;">Save</button>
+             		<button type="button" id="save" class="color button bSize" style="cursor: pointer;" onclick="save_click()">Save</button>
 
 			</form>
 			

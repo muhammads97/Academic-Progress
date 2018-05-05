@@ -34,8 +34,10 @@ function validate_user($row, $pw){
 			array_push($res, true);
 			$_SESSION['email'] = $row[4];
 			$_SESSION['fn'] = $row[1];
+			$_SESSION['second'] = $row[2];
 			$_SESSION['sn'] = $row[3];
 			$_SESSION['id'] = $row[0];
+			$_SESSION['pw'] = $row[5];
 			$_SESSION['sf'] = $row[8];
 			$_SESSION['pp'] = $row[9];
 			$_SESSION['country'] = $row[7];

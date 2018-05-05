@@ -16,12 +16,10 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 } 
-$sql = "CREATE TABLE courses (
+$sql = "CREATE TABLE semesters (
 			id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-			semesterID INT(10) UNSIGNED NOT NULL,
-			title VARCHAR(100),
-			grade VARCHAR(5),
-			credit VARCHAR(5)
+			userID INT(6) UNSIGNED NOT NULL,
+			title VARCHAR(30)
 			)";
 if ($conn->query($sql) === true){
 	echo "table created successfully!";
@@ -33,3 +31,10 @@ $conn->close();
 
 </body>
 </html>
+
+
+
+
+
+
+

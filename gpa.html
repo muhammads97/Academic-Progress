@@ -1,72 +1,30 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
 	<title>GPaaaaaaa</title>
 </head>
 	<link rel="stylesheet" type="text/css" href="gpa.css">
+	<script type="text/javascript" src="jquery-3.3.1.js"></script>
+	<script type="text/javascript" src="gpa/newCourse.js"></script>
+	<script type="text/javascript" src="gpa/newSemester.js"></script>
 <body>
 		<div class="logo">
 			<img src="logo.png" class="avatar">
 		</div>
 		<div class="buttons">
 			<ul>
-				<li><a href="#"><img id="profile" src="profile.png" class="avatar2"></a></li>
-				<li><a href="#"><img id="cv" src="gpa.png" class="avatar2"></a></li>
-				<li><a href="#"><img id="setting" src="settings.png" class="avatar2"></a></li>
-				<li><a style="cursor:pointer;" onclick="logout_click()"><img id="logout" src="logout.png" class="avatar2"></a></li>
+				<li><a style="cursor:pointer;" onclick="profile_click()"><img id="profile" src="images/profile.png" class="avatar2"></a></li>
+				<li><a href="#"><img id="cv" src="images/gpa.png" class="avatar2"></a></li>
+				<li><a style="cursor:pointer;" onclick="settings_click()"><img id="setting" src="images/settings.png" class="avatar2"></a></li>
+				<li><a style="cursor:pointer;" onclick="logout_click()"><img id="logout" src="images/logout.png" class="avatar2"></a></li>
 			</ul>
 		</div>
 		<div class="signupbox">
 				<div class="intro">Your GPA</div>
-				<div class="row wrapper">
-			   		 <form class="semester">
-				 		<div class="form">
-				 			<input type="text" placeholder="Semester Title" class="fram">
-				 			<br>
-						 	<label>Course Name</label> 
-						 	<label>Grade </label>
-						 	<label>Credits</label>  
-						 	<ul id="wanted">
-						 		<li>
-						 			<input type="text" placeholder="e.g. Math" class="frame">	 					 					<div class="grades">
-							 			<select class="frame" id="A">
-											<option value="95">A+</option>
-					 						<option value="93">A</option>
-					 						<option value="90">A-</option>
-								 			<option value="87">B+</option>
-											<option value="83">B</option>
-					 						<option value="80">B-</option>
-					 						<option value="77">C+</option>
-					 						<option value="73">C</option>
-								 			<option value="70">C-</option>
-								 			<option value="67">D+</option>
-											<option value="63">D</option>
-					 						<option value="60">D-</option>
-					 						<option value="0">F</option>
-						 				</select>
-							 		</div> 
-						 			<div class="credit">
-						 				<select class="frame" id="B">
-											<option value="1">1</option>
-				 							<option value="1.5">1.5</option>
-					 						<option value="2">2</option>
-							 				<option value="2.5">2.5</option>
-							 				<option value="3">3</option>
-							 				<option value="3.5">3.5</option>
-											<option value="4">4</option>
-					 						<option value="4.5">4.5</option>
-					 						<option value="5">5</option>
-							 				<option value="5.5">5.5</option>
-							 			</select>
-							 		</div>
-						 		</li> 
-							</ul>
-                           	<button class="button color bSize" id="addcor">Add Course</button>
-						</div>
-					</form>
-				</div> 
+				<ul id="semesters">
+				</ul>
                        <div class="col-sm-12 add-semester card">
-                       	<button class="button color bSize">Add Semester</button>
+                       	<button class="button color bSize" onclick="newSemester()">Add Semester</button>
                        </div>
                    </div>
 

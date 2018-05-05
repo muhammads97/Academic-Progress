@@ -13,7 +13,11 @@
           console.log(r);
    		}
 	});
+  loadPic();
 });
+function profile_click(){
+  window.location.href="home.html";
+}
  function addElements(arr){
     for(var i = 0; i < arr.length; i++){
       var li = document.createElement("li");
@@ -44,6 +48,7 @@
     }
 }
 
+
 function logout_click(){
   $.ajax({
       type: 'POST',
@@ -60,4 +65,27 @@ function logout_click(){
           console.log(r);
       }
   });
+}
+function settings_click(){
+  window.location.href="setting.html";
+}
+function loadPic(){
+  var session = {};
+  $.ajax({
+      type: 'POST',
+      url: 'registeration\\get_session.php', 
+      async: false,
+      success: function(data){
+        data = JSON.parse(data);
+        session = data;
+      },
+      error: function() {
+          alert("error");
+      }
+  });
+  if(session.pp){
+    var img = session.id + ".jpg";
+    console.log(img);
+    $('#profile').attr('src','images\\' + img);
+  }
 }
