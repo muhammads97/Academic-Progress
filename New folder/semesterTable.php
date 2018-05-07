@@ -19,6 +19,7 @@ if ($conn->connect_error) {
 $sql = "CREATE TABLE semesters (
 			id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
 			userID INT(6) UNSIGNED NOT NULL,
+			semesterNumber INT(4) NOT NULL,
 			title VARCHAR(30)
 			)";
 if ($conn->query($sql) === true){
