@@ -23,6 +23,20 @@ label {
   padding-right: 24px;
 }
 
+.resultplace {
+font-size: 20px;
+  font-weight: 300;
+  line-height: 1.3;
+  color: #2e3d49;
+  text-align: center;
+  margin-left: 520px;
+  margin-top: -320px;
+  border-style: solid;
+  border-width: 2px;
+  border-color: #ffcccc;
+  border-radius: 2%;
+}
+
 .avatar {
 	position: absolute;
 	margin-top: -45px;
@@ -88,6 +102,8 @@ label {
 	transform: translate(-50% , -50%);
 	box-sizing: border-box;
 	padding: 60px 30px;
+  overflow-y: auto;
+  
 }
 
 #wanted {
@@ -208,14 +224,15 @@ label {
 }
 #st {
 	margin-top: 20px;
-	margin-left: 20px;
+	margin-left: 250px;
 }
 
 /* Style the close button */
 .close {
   position: absolute;
+  margin-left: 370px;
+  margin-top: -35px;
   color: #fff;
-  margin-top: 194px;
   border-radius: 50%;
   cursor: pointer;
  /* position: relative;*/
@@ -224,6 +241,7 @@ label {
   margin-right: 265px;
   background: #ff0000;
   padding: 8px 12px 8px 12px;
+
 }
 
 .close:hover {
@@ -238,6 +256,28 @@ background: #e60000;
 
 
 
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey; 
+    border-radius: 10px;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #ff0000;; 
+    border-radius: 10px;
+    
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #e60000; 
+}
 
 
 
