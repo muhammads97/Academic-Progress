@@ -3,7 +3,7 @@
 	var id = ul.children.length + 1;
 	var li = document.createElement("li");
 	li.id = "semester" + id;
-	li.innerHTML = '<div class="row wrapper">'
+	li.innerHTML = '<div>'
 			   			+'<form class="semester">'
 				 		+	'<div class="form">'
 				 		+		'<input type="text" placeholder="Semester Title" class="fram">'
@@ -13,7 +13,7 @@
 						+ 		'<label>Credits</label>' 
 						+ 		'<ul id="wanted">'
 						+		'</ul>'
-                        +   		'<button class="button color bSize" id="addcor'+ id +'" type="button" onclick="newCourse(this.id)">Add Course</button>'
+                        +   		'<button class="button color bSize addcor" id="addcor'+ id +'" type="button" onclick="newCourse(this.id)">Add Course</button>'
 						+	'</div>'
 						+'</form>'
 						+'</div>';
