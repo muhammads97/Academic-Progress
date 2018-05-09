@@ -235,7 +235,10 @@ font-size: 20px;
   color: #fff;
   border-radius: 50%;
   cursor: pointer;
-  position: absolute;
+ /* position: relative;*/
+  right: 0;
+  top: 0;
+  margin-right: 265px;
   background: #ff0000;
   padding: 8px 12px 8px 12px;
 

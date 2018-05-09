@@ -18,7 +18,9 @@ if ($conn->connect_error) {
 } 
 $sql = "CREATE TABLE courses (
 			id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-			semesterID INT(10) UNSIGNED NOT NULL,
+			userID INT(6) UNSIGNED NOT NULL,
+			semesterNumber INT(10) UNSIGNED NOT NULL,
+			courseNumber INT(10) UNSIGNED NOT NULL,
 			title VARCHAR(100),
 			grade VARCHAR(5),
 			credit VARCHAR(5)
