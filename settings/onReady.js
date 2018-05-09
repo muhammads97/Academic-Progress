@@ -94,6 +94,9 @@ function loadUserData(){
 function profile_click(){
   window.location.href="home.html";
 }
+function gpa_click(){
+  window.location.href="gpa.html";
+}
 function save_click(){
   var fn = document.getElementById("fname").value;
   var sn = document.getElementById("sname").value;

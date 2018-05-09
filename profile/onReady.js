@@ -89,3 +89,7 @@ function loadPic(){
     $('#profile').attr('src','images\\' + img);
   }
 }
+
+function gpa_click(){
+  window.location.href="gpa.html";
+}

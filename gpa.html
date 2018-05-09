@@ -1,21 +1,39 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
+	<meta http-equiv="Cache-control" content="no-cache">
+	<script type="text/javascript">
+		$.ajax({
+  		type: 'POST',
+   		url: 'registeration\\get_session.php', 
+   		async: false,
+   		success: function(data){
+   			data = JSON.parse(data);
+   			//console.log(data.after_reg);
+   			if(data.after_reg !== true){
+   				window.location.href="SIGN IN PAGE.html";
+   			}
+   		},
+   		error: function() {
+      		alert("error");
+   		}
+	});
+	</script>
 	<title>GPaaaaaaa</title>
 </head>
 	<link rel="stylesheet" type="text/css" href="gpa.css">
 	<script type="text/javascript" src="jquery-3.3.1.js"></script>
 	<script type="text/javascript" src="gpa/onReady.js"></script>
-	<script type="text/javascript" src="gpa/newCourse.js"></script>
+	<script type="text/javascript" src="gpa/newCourses.js"></script>
 	<script type="text/javascript" src="gpa/newSemester.js"></script>
 <body>
 		<div class="logo">
-			<img src="logo.png" class="avatar">
+			<img src="images/logo.png" class="avatar">
 		</div>
 		<div class="buttons">
 			<ul>
 				<li><a style="cursor:pointer;" onclick="profile_click()"><img id="profile" src="images/profile.png" class="avatar2"></a></li>
-				<li><a href="#"><img id="cv" src="images/gpa.png" class="avatar2"></a></li>
+				<li><a style="cursor:pointer;" onclick="gpa_click()"><img id="cv" src="images/cv.png" class="avatar2"></a></li>
 				<li><a style="cursor:pointer;" onclick="settings_click()"><img id="setting" src="images/settings.png" class="avatar2"></a></li>
 				<li><a style="cursor:pointer;" onclick="logout_click()"><img id="logout" src="images/logout.png" class="avatar2"></a></li>
 			</ul>

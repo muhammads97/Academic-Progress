@@ -6,9 +6,10 @@
 	var li = document.createElement('li');
 	var n = ul.children.length;
 	li.id = "course" + (n + 1);
-	li.innerHTML = "<input type='text' placeholder='e.g. Math' class='frame' onKeyUp = 'titleOnKeyUp(id, (n+1), this)'>"
+	console.log(n+1);
+	li.innerHTML = "<input type='text' placeholder='e.g. Math' class='frame' onKeyUp = 'titleOnKeyUp("+id+", "+(n+1)+", this)'>"
 						 			+"<div class='grades'>"
-							 			+"<select class='frame' id='A' onChange = 'gradeOnChange(id, (n+1), this)'>"
+							 			+"<select class='frame' id='A' onChange = 'gradeOnChange("+id+", "+(n+1)+", this)'>"
 											+"<option value='95'>A+</option>"
 					 						+"<option value='93'>A</option>"
 					 						+"<option value='90'>A-</option>"
@@ -25,7 +26,7 @@
 						 				+"</select>"
 							 		+"</div> "
 						 			+"<div class='credit'>"
-						 				+"<select class='frame' id='B' onChange = 'creditOnChange(id, (n+1), this)'>"
+						 				+"<select class='frame' id='B' onChange = 'creditOnChange("+id+", "+(n+1)+", this)'>"
 											+"<option value='1'>1</option>"
 				 							+"<option value='1.5'>1.5</option>"
 					 						+"<option value='2'>2</option>"
