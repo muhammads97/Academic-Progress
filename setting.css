@@ -364,6 +364,9 @@ select:active, select:focus {
 
 #cv {
   margin-top: 115px;
+  width: 55px;
+  height: 55px;
+  margin-left: 179px;
 }
 #setting {
   margin-top: 218px;

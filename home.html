@@ -33,7 +33,7 @@
 		<div class="buttons">
 			<ul>
 				<li><a style="cursor:pointer;" onclick="profile_click()"><img id="profile" src="images/profile.png" class="avatar2"></a></li>
-				<li><a style="cursor:pointer;" onclick="gpa_click()"><img id="cv" src="images/cv.png" class="avatar2"></a></li>
+				<li><a style="cursor:pointer;" onclick="gpa_click()"><img id="cv" src="images/gpa.png" class="avatar2"></a></li>
 				<li><a style="cursor:pointer;" onclick="settings_click()"><img id="setting" src="images/settings.png" class="avatar2"></a></li>
 				<li><a style="cursor:pointer;" onclick="logout_click()"><img id="logout" src="images/logout.png" class="avatar2"></a></li>
 			</ul>
@@ -49,21 +49,33 @@
 					
 				</ul>
 			</div>
-
-
-
 		</div>
+
+
 		<div class="courses">
-			
-
-
-
+			<div id="exCor" class=" intro">
+				  <h2 id="ex">External Courses</h2>
+				  <input type="text" id="projectinput" class="fram" placeholder="Title...">
+				  <span id="icon2" class="color button bSize icon2">Add</span>
+			</div>
+			<div class="pro">
+				<ul class="list_pro" id="myUL">
+					<li class="checked">society project</li>
+					<li >soc</li>
+				  			<li >socict</li>
+				  			<li >soc</li>
+				  			<li >socict</li>
+				</ul>
+			</div>
 		</div>
+
+
 		<div class="projects">
 			<div id="myDIV" class=" intro">
 				  <h2>Projects</h2>
-				  <input type="text" id="projectinput" class="fram" placeholder="Title...">
-				  <label id="icon"><div id="h5ah">ADD</div><input type="file"></label>
+				  <input type="text" id="corinput" class="fram" placeholder="Title...">
+				  <span id="icon" class="color button bSize icon2">Add</span>
+			</div>
 					<div class="pro">
 						<ul class="list_pro" id="myUL">
 				  			<li class="checked">society project</li>
@@ -71,12 +83,9 @@
 				  			<li >socict</li>
 				  			<li >soc</li>
 				  			<li >socict</li>
+				  			
 						</ul>
 					</div>
-			</div>
-
-
-
 		</div>
 </body>
 </html>
