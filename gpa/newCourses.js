@@ -10,18 +10,18 @@
 	li.innerHTML = "<input type='text' placeholder='e.g. Math' class='frame' onKeyUp = 'titleOnKeyUp("+id+", "+(n+1)+", this)'>"
 						 			+"<div class='grades'>"
 							 			+"<select class='frame' id='A' onChange = 'gradeOnChange("+id+", "+(n+1)+", this)'>"
-											+"<option value='95'>A+</option>"
-					 						+"<option value='93'>A</option>"
-					 						+"<option value='90'>A-</option>"
-								 			+"<option value='87'>B+</option>"
-											+"<option value='83'>B</option>"
-					 						+"<option value='80'>B-</option>"
-					 						+"<option value='77'>C+</option>"
-					 						+"<option value='73'>C</option>"
-								 			+"<option value='70'>C-</option>"
-								 			+"<option value='67'>D+</option>"
-											+"<option value='63'>D</option>"
-					 						+"<option value='60'>D-</option>"
+											+"<option value='4.0'>A+</option>"
+					 						+"<option value='3.7'>A</option>"
+					 						+"<option value='3.3'>A-</option>"
+								 			+"<option value='3.0'>B+</option>"
+											+"<option value='2.7'>B</option>"
+					 						+"<option value='2.3'>B-</option>"
+					 						+"<option value='2.0'>C+</option>"
+					 						+"<option value='1.7'>C</option>"
+								 			+"<option value='1.3'>C-</option>"
+								 			+"<option value='1.0'>D+</option>"
+											+"<option value='0.7'>D</option>"
+					 						+"<option value='0.3'>D-</option>"
 					 						+"<option value='0'>F</option>"
 						 				+"</select>"
 							 		+"</div> "
@@ -38,8 +38,9 @@
 					 						+"<option value='5'>5</option>"
 							 				+"<option value='5.5'>5.5</option>"
 							 			+"</select>"
-							 		+"</div><span class='close'>×</span>";
-	console.log(li);
+							 		+"</div><span class='close' onClick = 'removeCourse("+id+", "+(n+1)+")'>×</span>";
+	li.children[1].children[0].value = '4.0';
+  li.children[2].children[0].value = '1';
 	ul.appendChild(li);
 	addCourse(id, (n+1));
 }
@@ -102,6 +103,26 @@ function creditOnChange(semesterNumber, courseNumber, input){
    		data: {SemesterNumber : semesterNumber, courseNumber: courseNumber, credit: t},
    		success: function(data){
       		console.log(data);
+   		},
+   		error: function(xhr, status, error) {
+  			console.log(xhr);
+  			console.log(status);
+  			console.log(error);
+		}
+	});
+}
+
+function removeCourse(semesterNumber, courseNumber){
+	var sem = document.getElementById("semester"+semesterNumber);
+	var ul = sem.children[0].children[0].children[0].children["wanted"];
+	$.ajax({
+  		type: 'POST',
+   		url: 'gpa/removeCourse.php', 
+   		async: false,
+   		data: {SemesterNumber : semesterNumber, courseNumber: courseNumber},
+   		success: function(data){
+      		var id = "course" + courseNumber;
+      		ul.removeChild(ul.children[id]);
    		},
    		error: function(xhr, status, error) {
   			console.log(xhr);

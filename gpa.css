@@ -102,7 +102,7 @@ font-size: 20px;
 }
 #semesters {
   margin-top: -0px;
-  margin-left: -40px;
+  margin-left: -0px;
 }
 .signupbox {
   margin-left: -60px;
@@ -247,13 +247,15 @@ font-size: 20px;
 }
 
 .addcor {
-  width: 28%;
+  width: 35%;
   margin-bottom: 20px;
-  margin-left: 180px;
+  margin-left: 150px;
 }
 #st {
+  width: 26.5%;
+
   margin-top: 20px;
-  margin-left: 250px;
+  margin-left: 233px;
 }
 
 /* Style the close button */

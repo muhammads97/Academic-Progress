@@ -22,7 +22,7 @@ function reg($arr){
 		$_SESSION["after_reg"] = true;
 		$sql = "SELECT * FROM users WHERE email = '{$arr["e"]}'";
 		$res = $conn->query($sql);
-		$res = $res->fetch_row();
+		$row = $res->fetch_row();
 		$_SESSION['email'] = $row[4];
 		$_SESSION['fn'] = $row[1];
 		$_SESSION['second'] = $row[2];
