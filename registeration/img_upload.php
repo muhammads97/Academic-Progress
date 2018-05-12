@@ -5,8 +5,8 @@ if (!isset($_SESSION['id'])){
 	echo json_encode(false);
 } else {
 	$arr = array();
-	array_push($arr, set_img());
-	array_push($arr, set_sf());
+	$arr[0] = set_img();
+	$arr[1] = set_sf();
 	updateSession();
 	$_SESSION['after_reg'] = false;
 	echo json_encode($arr);
@@ -14,9 +14,9 @@ if (!isset($_SESSION['id'])){
 
 
 function set_img(){
-	if($_POST['img_set']){
+	if($_POST["img_set"] == "true"){
 		if(isset($_FILES['file'])){
-			$target = "http://localhost" . "/first_project/images/";
+			$target = $_SERVER['DOCUMENT_ROOT'] . "/first_project/images/";
 			$id = $_SESSION['id'];
 			$imageFileType = strtolower(pathinfo($_FILES['file']['name'],PATHINFO_EXTENSION));
 			$target_dir = $target . $id . "." . $imageFileType;
@@ -27,7 +27,6 @@ function set_img(){
 			$dbname = "ac_track";
 			$conn = new mysqli($servername, $username, $password, $dbname);
 			if ($conn->connect_error) {
-				echo "<script>console.log('3');</script>";
     			die("Connection failed: " . $conn->connect_error);
 			} 
 			$sql = "UPDATE users SET p_picture=1 WHERE id = '{$id}'";
@@ -57,7 +56,7 @@ function set_sf(){
     		die("Connection failed: " . $conn->connect_error);
 		} 
 		$sql = "UPDATE users SET study_field='{$sf}' WHERE id = '{$id}'";
-		if ($conn->query($sql) === TRUE) {
+		if ($conn->query($sql) === true) {
 			$conn->close();
    			return true;
    		} else {

@@ -164,8 +164,26 @@ function register(arr){
    		success: function(data){
       		u = data.r;
       		if(u){
+      			console.log(data);
+      			addSemCourse();
       			window.location.href="Confermation_Sign_Up.html";
       		}
+   		},
+   		error: function(xhr, status, error) {
+  			console.log(xhr);
+  			console.log(status);
+  			console.log(error);
+		}
+	});
+}
+
+function addSemCourse(){
+	$.ajax({
+  		type: 'POST',
+   		url: 'registeration/addSemCourse.php', 
+   		async: false,
+   		success: function(data){
+      		console.log(data);
    		},
    		error: function(xhr, status, error) {
   			console.log(xhr);

@@ -135,6 +135,7 @@ function post(form){
     contentType: false,
     processData: false,
       success: function(data){
+        console.log(data);
           if(data[0] && data[1]){
             window.location.href="setting.html";
           } else {
